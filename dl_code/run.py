@@ -63,7 +63,7 @@ def build_mpi_script(conf, replacement=None):
     # get prefix_cmd.
     if conf.n_mpi_process > 1:
         # prefix_cmd = "mpirun -n {} --hostfile {} -bind-to none -map-by slot -mca pml ob1 -mca btl ^openib -x CUDA_LAUNCH_BLOCKING=0 -x NCCL_DEBUG=INFO --mca orte_base_help_aggregate 1 --mca btl_tcp_if_exclude docker0,lo --mca btl_smcuda_use_cuda_ipc 1  --prefix {} "
-        prefix_cmd = f"mpirun -n {conf.n_mpi_process} --allow-as-root --hostfile {conf.hostfile} --mca orte_base_help_aggregate 0 --mca btl_tcp_if_exclude docker0,lo --mca btl_smcuda_use_cuda_ipc {1 if conf.use_ipc else 0} --prefix {conf.mpi_path} "
+        prefix_cmd = f"mpirun -n {conf.n_mpi_process} --allow-run-as-root --hostfile {conf.hostfile} --mca orte_base_help_aggregate 0 --mca btl_tcp_if_exclude docker0,lo --mca btl_smcuda_use_cuda_ipc {1 if conf.use_ipc else 0} --prefix {conf.mpi_path} "
         prefix_cmd += (
             f" -x {conf.mpi_env}"
             if conf.mpi_env is not None and len(conf.mpi_env) > 0
