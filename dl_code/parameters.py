@@ -200,7 +200,7 @@ def get_args():
     # device
     parser.add_argument("--backend", type=str, default="mpi")
     parser.add_argument("--use_ipc", type=str2bool, default=False)
-    parser.add_argument("--hostfile", type=str, default="iccluster/hostfile")
+    parser.add_argument("--hostfile", type=str, default="hostfile") #iccluster/hostfile
     parser.add_argument("--mpi_path", type=str, default="$HOME/.openmpi")
     parser.add_argument("--mpi_env", type=str, default=None)
     parser.add_argument(
