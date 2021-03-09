@@ -226,7 +226,7 @@ def get_args():
     parser.add_argument("--world", default=None, type=str)
     parser.add_argument("--on_cuda", type=str2bool, default=True)
     parser.add_argument("--comm_device", type=str, default="cuda")
-    parser.add_argument("--local_rank", default=None, type=str)
+    parser.add_argument("--local_rank", default=None, type=int)
     parser.add_argument("--clean_python", default=False, type=str2bool)
 
     # parse conf.
