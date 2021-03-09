@@ -204,7 +204,7 @@ def get_args():
     parser.add_argument("--mpi_path", type=str, default="$HOME/.openmpi")
     parser.add_argument("--mpi_env", type=str, default=None)
     parser.add_argument(
-        "--python_path", type=str, default="$HOME/conda/envs/pytorch-py3.6/bin/python"
+        "--python_path", type=str, default="python"
     )
     parser.add_argument(
         "-j",
